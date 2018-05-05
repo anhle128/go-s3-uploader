@@ -15,10 +15,10 @@ type Hander struct {
 }
 
 // Init s3 helper
-func Init(region, bucket string) (Hander, error) {
+func Init(id, secret, token, region, bucket string) (Hander, error) {
 	session, err := session.NewSession(&aws.Config{
 		Region:      aws.String(region),
-		Credentials: credentials.NewStaticCredentials("AKIAIRDKW6IACJ6IBGCQ", "vqdEnq9I/Mrd4vwGrnd2oGwEI2rA7mLcn7BMPw4f", ""),
+		Credentials: credentials.NewStaticCredentials(id, secret, token),
 	})
 	if err != nil {
 		return Hander{}, err
