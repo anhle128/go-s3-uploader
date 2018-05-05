@@ -13,7 +13,7 @@ func TestUploader(t *testing.T) {
 	}
 
 	s3Uploader := s3handler.NewUploader("test", "motconvit")
-	_, err = s3Uploader.Upload([]byte("mot con vit xue ra hai cai canh"))
+	err = s3Uploader.Upload([]byte("mot con vit xue ra hai cai canh"))
 	if err != nil {
 		t.Error(err)
 	}
