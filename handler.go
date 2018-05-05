@@ -30,8 +30,8 @@ func Init(region, bucket string) (Hander, error) {
 }
 
 // NewUploader create new uploader
-func (handler Hander) NewUploader(filePath, fileName string) S3UploadHandler {
-	return S3UploadHandler{
+func (handler Hander) NewUploader(filePath, fileName string) *S3UploadHandler {
+	return &S3UploadHandler{
 		s3Uploader: s3manager.NewUploader(handler.session),
 		fileName:   fileName,
 		filePath:   filePath,
