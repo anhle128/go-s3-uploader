@@ -33,5 +33,5 @@ func (handler S3PutObjectHandler) Write(p []byte) (n int, err error) {
 	if err != nil {
 		return -1, err
 	}
-	return 1, nil
+	return len(p), nil
 }
